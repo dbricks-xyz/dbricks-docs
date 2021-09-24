@@ -10,7 +10,7 @@
             name="dbricks API docs"
             content="Documentation for dbricks.xyz API"
         >
-    <title>api.dbricks.xyz</title>
+    <title>docs.dbricks.xyz</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -316,6 +316,11 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#impossibru-how-does-this-work" class="toc-h2 toc-link" data-title="Impossibru! How does this work?">Impossibru! How does this work?</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#serum" class="toc-h1 toc-link" data-title="Serum">Serum</a>
@@ -341,25 +346,66 @@
         <ul class="toc-footer">
             <li><a href='#'>dbricks.xyz Typescript SDK</a></li>
             <li><a href='#'>dbricks.xyz Rust SDK</a></li>
-            <li><a href='#'>dbricks.xyz App</a></li>
+            <li><a href='#'>dbricks.xyz Demo App</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>dbricks.xyz let&#39;s you combine protocols on Solana in whichever ways you choose.</p>
+<p>dbricks.xyz lets you compose protocols built on Solana like lego bricks. All using a single, unified, RESTful API.</p>
 
-<p>Each route returns 2 things:
-1. A set of instructions
-2. A set of <em>additional</em> signers</p>
+<p>This means you can...</p>
 
-<p>Your job is simple
-1. Stuff instructions into a transaction
-2. Prepend the signatures with the main owner&#39;s keypair (can be through a wallet)
-3. Fire off to Solana</p>
+<ul>
+<li>place an SRM -&gt; SOL trade on Serum</li>
+<li>deposit SOL as collateral into Mango</li>
+<li>borrow USDC against it</li>
+<li>deposit USDC into Saber (to earn that nice juicy yield)</li>
+</ul>
 
-<p>Our SDK does this for you automatically. [TO ADD INSTRUCTIONS]</p>
+<p>...all in a SINGLE TRANSACTION.</p>
+
+<p>This also means:</p>
+
+<ul>
+<li>You don&#39;t need to learn rust</li>
+<li>You don&#39;t need to learn how Solana works besides the basics, like <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">what&#39;s an instruction</a> and a <a href="https://docs.solana.com/developing/programming-model/accounts#signers">signer</a></li>
+<li>You don&#39;t need to find / understand / learn to use SDKs for any of the protocols we&#39;ve got on dbricks</li>
+<li>You often don&#39;t need to create PDAs / token accounts by hand - we do it for you</li>
+<li>You can combine multiple instructions into a single transaction (we make sure they fit)</li>
+<li>You can combine multiple protocols into a single transaction</li>
+<li>All in all, you can move much faster as a developer and spend your time on things that matter 💪</li>
+</ul>
+<h2 id='impossibru-how-does-this-work'>Impossibru! How does this work?</h2>
+<p>Each dbricks route returns 2 things:</p>
+
+<ol>
+<li>A set of instructions</li>
+<li>A set of <em>additional</em> signers</li>
+</ol>
+
+<p>First, the instructions. When you hit our API we&#39;ll ask you for the minimum info necessary to execute your desired action. Eg creating a market on Serum actually <a href="https://github.com/project-serum/serum-dex/blob/master/dex/src/instruction.rs#L337">takes 12 different accounts</a>. With dbricks you only need to provide 2: your <code>base mint</code> and your <code>quote mint</code>. Now when we say execute, we don&#39;t yet mean fire off to Solana. Instead, dbricks.xyz prepares the necessary instructions and sends them back to you. This is so that:</p>
+
+<ul>
+<li>you could combine these instructions with others into a single transaction</li>
+<li>you could sign them client-side without ever exposing your private key</li>
+</ul>
+
+<p>Now the signers. Depending on the action you want to do, there sometimes are additional signers that need to sing the transaction. Eg sometimes we&#39;ll need to create a token account for you owned in your name. That requires the signature from the keypair used to generate that account, so we&#39;ll send it to you. If you&#39;re worried about security - don&#39;t be, as soon as the account is created the only keypair that actually has authority over it is your own, which the server never sees.</p>
+
+<p>Once you&#39;ve got the instructions and the signers - what do you do? Simple:</p>
+
+<ol>
+<li>Stuff instructions into a transaction 🗳️</li>
+<li>Prepend the signers array with the main owner&#39;s keypair 🔑</li>
+<li>Fire off to Solana 🚀</li>
+<li>Profit 🤑</li>
+</ol>
+
+<p>You can do the above by hand, or you can use one of our SDKs (<a href="TODO">typescript</a>) (<a href="TODO">rust</a>). Check out our open source <a href="TODO">demo app</a> (<a href="TODO">code</a>) to see it in action!</p>
+
+<p>That&#39;s it. We&#39;ll shut up for now and let you browse the docs. If you&#39;d like to learn more about dbircks.xyz, checkout our <a href="TODO">homepage</a>. For feedback, enquiries, memes and anything else - hit us up on team@dbricks.xyz.</p>
 <h1 id='serum'>Serum</h1><h2 id='place-order'>Place order</h2>
 <blockquote>
 <p>Request</p>
