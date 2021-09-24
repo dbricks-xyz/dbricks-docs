@@ -1,0 +1,75 @@
+> Request
+
+```
+POST /serum/orders
+```
+
+```json
+{
+  "marketPk": "J8audQtAaAdYq6vYKonkaewNMk3bYNPevuZecTNF7s97",
+  "orderType": "limit",
+  "ownerPk": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA",
+  "price": "10",
+  "side": "buy",
+  "size": "100"
+}
+```
+
+```shell
+{
+  "marketPk": "string",
+  "orderType": "string",
+  "ownerPk": "string",
+  "price": "string",
+  "side": "string",
+  "size": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "ixs": [
+      {
+        "data": "000a000000000000000a000000000000006400000000000000e80300000000000000000000000000000000000000000000ffff",
+        "keys": [
+          {
+            "isSigner": false,
+            "isWritable": true,
+            "pubkey": "J8audQtAaAdYq6vYKonkaewNMk3bYNPevuZecTNF7s97"
+          }
+        ],
+        "programId": "DVieqxNimmtbZpZTw2sZiSAohNJuHLywGaMs47RAW97Z"
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "ixs": [
+      {
+        "data": "string",
+        "keys": [
+          {
+            "isSigner": "boolean",
+            "isWritable": "boolean",
+            "pubkey": "string"
+          }
+        ],
+        "programId": "string"
+      }
+    ],
+    "signers": [
+      "null"
+    ]
+  }
+]
+```

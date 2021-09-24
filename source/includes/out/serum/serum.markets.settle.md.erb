@@ -1,0 +1,67 @@
+> Request
+
+```
+POST /serum/markets/settle
+```
+
+```json
+{
+  "marketPk": "J8audQtAaAdYq6vYKonkaewNMk3bYNPevuZecTNF7s97",
+  "ownerPk": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"
+}
+```
+
+```shell
+{
+  "marketPk": "string",
+  "ownerPk": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "ixs": [
+      {
+        "data": "0005000000",
+        "keys": [
+          {
+            "isSigner": false,
+            "isWritable": true,
+            "pubkey": "J8audQtAaAdYq6vYKonkaewNMk3bYNPevuZecTNF7s97"
+          }
+        ],
+        "programId": "DVieqxNimmtbZpZTw2sZiSAohNJuHLywGaMs47RAW97Z"
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "ixs": [
+      {
+        "data": "string",
+        "keys": [
+          {
+            "isSigner": "boolean",
+            "isWritable": "boolean",
+            "pubkey": "string"
+          }
+        ],
+        "programId": "string"
+      }
+    ],
+    "signers": [
+      "null"
+    ]
+  }
+]
+```

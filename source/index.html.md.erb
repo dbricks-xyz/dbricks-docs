@@ -1,0 +1,64 @@
+---
+title: api.dbricks.xyz
+
+language_tabs:
+  - json: curl
+  - shell: schema
+
+toc_footers:
+  - <a href='#'>dbricks.xyz Typescript SDK</a>
+  - <a href='#'>dbricks.xyz Rust SDK</a>
+  - <a href='#'>dbricks.xyz App</a>
+
+includes:
+  - errors
+
+search: true
+
+code_clipboard: true
+
+meta:
+  - name: dbricks API docs
+    content: Documentation for dbricks.xyz API
+---
+
+# Introduction
+
+dbricks.xyz let's you combine protocols on Solana in whichever ways you choose.
+
+Each route returns 2 things:
+1. A set of instructions
+2. A set of *additional* signers
+
+Your job is simple
+1. Stuff instructions into a transaction
+2. Prepend the signatures with the main owner's keypair (can be through a wallet)
+3. Fire off to Solana
+
+Our SDK does this for you automatically. [TO ADD INSTRUCTIONS]
+
+# Serum
+
+## Place order
+
+<%= partial "includes/out/serum/serum.orders.place.md.erb" %>
+
+Awsum commentary shall go herez.
+
+## Cancel order
+
+<%= partial "includes/out/serum/serum.orders.cancel.md.erb" %>
+
+Awsum commentary shall go herez.
+
+## Initialize new market
+
+<%= partial "includes/out/serum/serum.markets.init.md.erb" %>
+
+Awsum commentary shall go herez.
+
+## Settle market
+
+<%= partial "includes/out/serum/serum.markets.settle.md.erb" %>
+
+Awsum commentary shall go herez.
