@@ -18,15 +18,15 @@
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0005000000"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amtqzro7JkL85h7wgzpEW2TPDDjg7nm6s19gQwkF2SAH"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amtqzro7JkL85h7wgzpEW2TPDDjg7nm6s19gQwkF2SAH"</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DVieqxNimmtbZpZTw2sZiSAohNJuHLywGaMs47RAW97Z"</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DVieqxNimmtbZpZTw2sZiSAohNJuHLywGaMs47RAW97Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0005000000"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -38,15 +38,15 @@
   <span class="o">{</span>
     <span class="s2">"instructions"</span>: <span class="o">[</span>
       <span class="o">{</span>
-        <span class="s2">"data"</span>: <span class="s2">"string"</span>,
         <span class="s2">"keys"</span>: <span class="o">[</span>
           <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
             <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
-            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>,
-            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
           <span class="o">}</span>
         <span class="o">]</span>,
-        <span class="s2">"programId"</span>: <span class="s2">"string"</span>
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
       <span class="o">}</span>
     <span class="o">]</span>,
     <span class="s2">"signers"</span>: <span class="o">[</span>
