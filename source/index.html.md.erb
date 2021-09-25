@@ -6,9 +6,9 @@ language_tabs:
   - shell: schema
 
 toc_footers:
-  - <a href='#'>dbricks.xyz Typescript SDK</a>
-  - <a href='#'>dbricks.xyz Rust SDK</a>
-  - <a href='#'>dbricks.xyz Demo App</a>
+  - <a href='TODO'>dbricks.xyz Typescript SDK</a>
+  - <a href='TODO'>dbricks.xyz Rust SDK</a>
+  - <a href='TODO'>dbricks.xyz Demo App</a>
 
 includes:
   - errors
@@ -22,25 +22,25 @@ meta:
     content: Documentation for dbricks.xyz API
 ---
 
-# Introduction
+# Overview
 
 dbricks.xyz lets you compose protocols built on Solana like lego bricks. All using a single, unified, RESTful API.
 
 This means you can...
 
-* place an SRM -> SOL trade on Serum
-* deposit SOL as collateral into Mango
-* borrow USDC against it
-* deposit USDC into Saber (to earn that nice juicy yield)
+1. place an SRM -> SOL trade on Serum
+2. deposit SOL as collateral into Mango
+3. borrow USDC against it
+4. deposit USDC into Saber (to earn that nice juicy yield)
 
-...all in a SINGLE TRANSACTION.
+...all in a *single transaction*.
 
 This also means:
 
 * You don't need to learn rust
 * You don't need to learn how Solana works besides the basics, like [what's an instruction](https://docs.solana.com/developing/programming-model/transactions#instructions) and a [signer](https://docs.solana.com/developing/programming-model/accounts#signers)
 * You don't need to find / understand / learn to use SDKs for any of the protocols we've got on dbricks
-* You often don't need to create PDAs / token accounts by hand - we do it for you
+* You need to supply a lot less information than if you were to interact with protocols yourself (we fill in the gaps)
 * You can combine multiple instructions into a single transaction (we make sure they fit)
 * You can combine multiple protocols into a single transaction
 * All in all, you can move much faster as a developer and spend your time on things that matter 💪
@@ -52,12 +52,20 @@ Each dbricks route returns 2 things:
 1. A set of instructions
 2. A set of *additional* signers
 
-First, the instructions. When you hit our API we'll ask you for the minimum info necessary to execute your desired action. Eg creating a market on Serum actually [takes 12 different accounts](https://github.com/project-serum/serum-dex/blob/master/dex/src/instruction.rs#L337). With dbricks you only need to provide 2: your `base mint` and your `quote mint`. Now when we say execute, we don't yet mean fire off to Solana. Instead, dbricks.xyz prepares the necessary instructions and sends them back to you. This is so that:
+### Instructions
+
+When you hit our API we'll ask you for the minimum info necessary to execute your desired action. Eg creating a market on Serum actually [takes 12 different accounts](https://github.com/project-serum/serum-dex/blob/master/dex/src/instruction.rs#L337). With dbricks you only need to provide 2: your `base mint` and your `quote mint`.
+
+Now when we say execute, we don't yet mean fire off to Solana. Instead, dbricks.xyz prepares the necessary instructions and sends them back to you. This is so that:
 
 * you could combine these instructions with others into a single transaction
 * you could sign them client-side without ever exposing your private key
 
-Now the signers. Depending on the action you want to do, there sometimes are additional signers that need to sing the transaction. Eg sometimes we'll need to create a token account for you owned in your name. That requires the signature from the keypair used to generate that account, so we'll send it to you. If you're worried about security - don't be, as soon as the account is created the only keypair that actually has authority over it is your own, which the server never sees.
+### Signers
+
+Depending on your desired action, there can be additional signers that need to sing the transaction. Eg sometimes we'll need to create a token account for you owned in your name, which requires the signature from the keypair used to generate that account, so we'll send it to you.
+
+### Sending the transaction
 
 Once you've got the instructions and the signers - what do you do? Simple:
 
@@ -68,7 +76,15 @@ Once you've got the instructions and the signers - what do you do? Simple:
 
 You can do the above by hand, or you can use one of our SDKs ([typescript](TODO)) ([rust](TODO)). Check out our open source [demo app](TODO) ([code](TODO)) to see it in action!
 
-That's it. We'll shut up for now and let you browse the docs. If you'd like to learn more about dbircks.xyz, checkout our [homepage](TODO). For feedback, enquiries, memes and anything else - hit us up on team@dbricks.xyz.
+## REST API
+
+REST endpoint URL: https://dbricks.xyz [TODO]
+
+Requests and responses use JSON.
+
+Currently the API only supports "active" endpoints (eg place an order) and not passive endpoints (eg read the state of the orderbook). This is due to resource constraints and will change in the near future. [TODO]
+
+Currently no authentication is in place, but there is an active rate limit of 30 requests/second on all endpoints. Reach out if you need more - [team@dbricks.xyz](TODO)
 
 # Serum
 
