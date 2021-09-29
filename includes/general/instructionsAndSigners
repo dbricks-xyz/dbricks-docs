@@ -1,0 +1,18 @@
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>

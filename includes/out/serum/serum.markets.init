@@ -3,18 +3,18 @@
 </blockquote>
 <div class="highlight"><pre class="highlight plaintext"><code>POST /serum/markets/
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"baseMintPk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HgQfasm8em5BfXYRBfkKgFkLQydTK9UvWuP21hYv7Cet"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quoteMintPk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FhMDEDvG9yrQqcovk9DKwPFgA5Wfo1UAFSotBhAQiiva"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"baseMintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85pSxh7TEHDpQF43d865n5NvXTjKTDGzkxw6zWDmEPYo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quoteMintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1xKK1cFiZb9bKceoPHUvgCM6DfiRjSsgtCTQjshnJhf"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lotSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"tickSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ownerPk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
-  <span class="s2">"baseMintPk"</span>: <span class="s2">"string"</span>,
-  <span class="s2">"quoteMintPk"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"baseMintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"quoteMintPubkey"</span>: <span class="s2">"string"</span>,
   <span class="s2">"lotSize"</span>: <span class="s2">"string"</span>,
   <span class="s2">"tickSize"</span>: <span class="s2">"string"</span>,
-  <span class="s2">"ownerPk"</span>: <span class="s2">"string"</span>
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>
 <span class="o">}</span>
 </code></pre></div>
 <blockquote>
@@ -38,34 +38,11 @@
     </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"secretKey"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="mi">131</span><span class="w">
+          </span><span class="mi">120</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
-  <span class="o">{</span>
-    <span class="s2">"instructions"</span>: <span class="o">[</span>
-      <span class="o">{</span>
-        <span class="s2">"keys"</span>: <span class="o">[</span>
-          <span class="o">{</span>
-            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
-            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
-            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
-          <span class="o">}</span>
-        <span class="o">]</span>,
-        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
-        <span class="s2">"data"</span>: <span class="s2">"string"</span>
-      <span class="o">}</span>
-    <span class="o">]</span>,
-    <span class="s2">"signers"</span>: <span class="o">[</span>
-      <span class="o">{</span>
-        <span class="s2">"secretKey"</span>: <span class="o">[</span>
-          <span class="s2">"number"</span>
-        <span class="o">]</span>
-      <span class="o">}</span>
-    <span class="o">]</span>
-  <span class="o">}</span>
-<span class="o">]</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>null
 </code></pre></div>

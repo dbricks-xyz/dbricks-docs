@@ -1,0 +1,14 @@
+<h1 id='faq'>FAQ</h1><h2 id='how-to-find-serum-market-address'>How to find Serum market address?</h2>
+<ol>
+<li>Go to https://dex.projectserum.com</li>
+<li>Select the appropriate exchange pair in the top left corner</li>
+<li>Click the little (i) button next to the pair name</li>
+<li>Copy the address</li>
+</ol>
+<h2 id='how-to-find-token-mint-address'>How to find token mint address?</h2>
+<ol>
+<li>Go to https://solscan.io/</li>
+<li>In the search box start typing the desired token name, eg ATLAS</li>
+<li>Select the right token &amp; hit enter</li>
+<li>You will be taken to the <a href="https://solscan.io/token/ATLASXmbPQxBUYbxPsV97usA3fPQYEqzQBUHgiFCUsXx">token&#39;s page</a>, which contains the address</li>
+</ol>
