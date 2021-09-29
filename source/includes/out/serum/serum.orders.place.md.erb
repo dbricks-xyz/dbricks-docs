@@ -6,23 +6,23 @@ POST /serum/orders
 
 ```json
 {
-  "marketPk": "Amtqzro7JkL85h7wgzpEW2TPDDjg7nm6s19gQwkF2SAH",
+  "marketPubkey": "5LcjycXzxTwXZYFBQ7SKBWN1hkm1SHCCPpd1oaHccx5Q",
   "side": "buy",
-  "price": "10",
-  "size": "100",
+  "price": "24",
+  "size": "10",
   "orderType": "limit",
-  "ownerPk": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"
+  "ownerPubkey": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"
 }
 ```
 
 ```shell
 {
-  "marketPk": "string",
+  "marketPubkey": "string",
   "side": "string",
   "price": "string",
   "size": "string",
   "orderType": "string",
-  "ownerPk": "string"
+  "ownerPubkey": "string"
 }
 ```
 
@@ -35,13 +35,13 @@ POST /serum/orders
       {
         "keys": [
           {
-            "pubkey": "Amtqzro7JkL85h7wgzpEW2TPDDjg7nm6s19gQwkF2SAH",
+            "pubkey": "5LcjycXzxTwXZYFBQ7SKBWN1hkm1SHCCPpd1oaHccx5Q",
             "isSigner": false,
             "isWritable": true
           }
         ],
         "programId": "DVieqxNimmtbZpZTw2sZiSAohNJuHLywGaMs47RAW97Z",
-        "data": "000a000000000000000a000000000000006400000000000000e80300000000000000000000000000000000000000000000ffff"
+        "data": "000a0000000000000018000000000000000a00000000000000f00000000000000000000000000000000000000000000000ffff"
       }
     ],
     "signers": [
@@ -52,24 +52,5 @@ POST /serum/orders
 ```
 
 ```shell
-[
-  {
-    "instructions": [
-      {
-        "keys": [
-          {
-            "pubkey": "string",
-            "isSigner": "boolean",
-            "isWritable": "boolean"
-          }
-        ],
-        "programId": "string",
-        "data": "string"
-      }
-    ],
-    "signers": [
-      "null"
-    ]
-  }
-]
+null
 ```

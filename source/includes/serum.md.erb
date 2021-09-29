@@ -1,0 +1,73 @@
+# Serum
+
+## Place order
+
+<%= partial "includes/out/serum/serum.orders.place.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Serum market to place an order on. See [FAQ](#how-to-find-serum-market-address) for instructions on how to find.
+side | X | One of: 'buy' / 'sell'.
+price | X | Float or int passed as string.
+size | X | Float or int passed as string.
+orderType | X | One of: 'limit' / 'ioc' / 'postOnly'.
+ownerPubkey | X | PublicKey of wallet owner.
+
+For more information on placing Serum trades, see [Bonfida's Serum guide](https://docs.bonfida.org/help/serum-dex/general-1) (Bonfida is the #1 GUI for the Serum DEX).
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Cancel order
+
+<%= partial "includes/out/serum/serum.orders.cancel.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Serum market to cancel an order on. See [FAQ](#how-to-find-serum-market-address) for instructions on how to find.
+orderId | √ | ID in hex format, eg 'affffffffffffffff'. Leave empty to cancel all outstanding orders for owner, in specified market.
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+Note that if the requested order is not found, both instructions and signers come back empty.
+
+## Initialize new market
+
+<%= partial "includes/out/serum/serum.markets.init.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+baseMintPubkey | X | PublicKey of base currency. See [FAQ](#how-to-find-token-mint-address) for instructions on how to find.
+quoteMintPubkey | X | PublicKey of quote currency. See [FAQ](#how-to-find-token-mint-address) for instructions on how to find.
+lotSize | X | The smallest unit of base currency that can be traded. Float or int passed as string
+tickSize | X | The smallest unit of quote currency that the price can move by. Float or int passed as string
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Settle market
+
+<%= partial "includes/out/serum/serum.markets.settle.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Serum market to settle. See [FAQ](#how-to-find-serum-market-address) for instructions on how to find.
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>

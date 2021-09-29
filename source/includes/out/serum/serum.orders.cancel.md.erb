@@ -6,17 +6,17 @@ POST /serum/orders/cancel
 
 ```json
 {
-  "marketPk": "Amtqzro7JkL85h7wgzpEW2TPDDjg7nm6s19gQwkF2SAH",
-  "orderId": "",
-  "ownerPk": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"
+  "marketPubkey": "GNhh1cJ4LA45ozkZyiXFTxsvV5ZkfPqMW4imucgicQwj",
+  "orderId": "affffffffffffffff",
+  "ownerPubkey": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"
 }
 ```
 
 ```shell
 {
-  "marketPk": "string",
+  "marketPubkey": "string",
   "orderId": "string",
-  "ownerPk": "string"
+  "ownerPubkey": "string"
 }
 ```
 
@@ -29,13 +29,13 @@ POST /serum/orders/cancel
       {
         "keys": [
           {
-            "pubkey": "Amtqzro7JkL85h7wgzpEW2TPDDjg7nm6s19gQwkF2SAH",
+            "pubkey": "GNhh1cJ4LA45ozkZyiXFTxsvV5ZkfPqMW4imucgicQwj",
             "isSigner": false,
             "isWritable": false
           }
         ],
         "programId": "DVieqxNimmtbZpZTw2sZiSAohNJuHLywGaMs47RAW97Z",
-        "data": "000b00000000000000fdffffffffffffff0a00000000000000"
+        "data": "000b00000000000000ffffffffffffffff0a00000000000000"
       }
     ],
     "signers": [
@@ -46,24 +46,5 @@ POST /serum/orders/cancel
 ```
 
 ```shell
-[
-  {
-    "instructions": [
-      {
-        "keys": [
-          {
-            "pubkey": "string",
-            "isSigner": "boolean",
-            "isWritable": "boolean"
-          }
-        ],
-        "programId": "string",
-        "data": "string"
-      }
-    ],
-    "signers": [
-      "null"
-    ]
-  }
-]
+null
 ```

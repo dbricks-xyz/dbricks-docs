@@ -6,21 +6,21 @@ POST /serum/markets/
 
 ```json
 {
-  "baseMintPk": "HgQfasm8em5BfXYRBfkKgFkLQydTK9UvWuP21hYv7Cet",
-  "quoteMintPk": "FhMDEDvG9yrQqcovk9DKwPFgA5Wfo1UAFSotBhAQiiva",
+  "baseMintPubkey": "85pSxh7TEHDpQF43d865n5NvXTjKTDGzkxw6zWDmEPYo",
+  "quoteMintPubkey": "1xKK1cFiZb9bKceoPHUvgCM6DfiRjSsgtCTQjshnJhf",
   "lotSize": "1",
   "tickSize": "1",
-  "ownerPk": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"
+  "ownerPubkey": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"
 }
 ```
 
 ```shell
 {
-  "baseMintPk": "string",
-  "quoteMintPk": "string",
+  "baseMintPubkey": "string",
+  "quoteMintPubkey": "string",
   "lotSize": "string",
   "tickSize": "string",
-  "ownerPk": "string"
+  "ownerPubkey": "string"
 }
 ```
 
@@ -45,7 +45,7 @@ POST /serum/markets/
     "signers": [
       {
         "secretKey": [
-          131
+          120
         ]
       }
     ]
@@ -54,28 +54,5 @@ POST /serum/markets/
 ```
 
 ```shell
-[
-  {
-    "instructions": [
-      {
-        "keys": [
-          {
-            "pubkey": "string",
-            "isSigner": "boolean",
-            "isWritable": "boolean"
-          }
-        ],
-        "programId": "string",
-        "data": "string"
-      }
-    ],
-    "signers": [
-      {
-        "secretKey": [
-          "number"
-        ]
-      }
-    ]
-  }
-]
+null
 ```

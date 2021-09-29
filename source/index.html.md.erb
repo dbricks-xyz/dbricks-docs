@@ -10,9 +10,6 @@ toc_footers:
   - <a href='TODO'>dbricks.xyz Rust SDK</a>
   - <a href='TODO'>dbricks.xyz Demo App</a>
 
-includes:
-  - errors
-
 search: true
 
 code_clipboard: true
@@ -67,7 +64,7 @@ Depending on your desired action, there can be additional signers that need to s
 
 ### Sending the transaction
 
-Once you've got the instructions and the signers - what do you do? Simple:
+Once you got the instructions and signers - what do you do? Simple:
 
 1. Stuff instructions into a transaction 🗳️
 2. Prepend the signers array with the main owner's keypair 🔑
@@ -86,28 +83,8 @@ Currently the API only supports "active" endpoints (eg place an order) and not p
 
 Currently no authentication is in place, but there is an active rate limit of 30 requests/second on all endpoints. Reach out if you need more - [team@dbricks.xyz](TODO)
 
-# Serum
+<%= partial "includes/serum.md.erb" %>
 
-## Place order
+<%= partial "includes/FAQ.md.erb" %>
 
-<%= partial "includes/out/serum/serum.orders.place.md.erb" %>
-
-Awsum commentary shall go herez.
-
-## Cancel order
-
-<%= partial "includes/out/serum/serum.orders.cancel.md.erb" %>
-
-Awsum commentary shall go herez.
-
-## Initialize new market
-
-<%= partial "includes/out/serum/serum.markets.init.md.erb" %>
-
-Awsum commentary shall go herez.
-
-## Settle market
-
-<%= partial "includes/out/serum/serum.markets.settle.md.erb" %>
-
-Awsum commentary shall go herez.
+<%= partial "includes/errors.md.erb" %>
