@@ -1,0 +1,51 @@
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mintPubkey</td>
+<td>X</td>
+<td>PublicKey of token to deposit. See <a href=".#how-to-find-token-mint-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+
+<p>For more information on using Solend, please see <a href="https://docs.solend.fi/">their docs</a>.
+<aside class="notice">
+All tokens listed on Solend are currently supported except for SOL. Any Solend transactions involving SOL done through dbricks will fail.
+</aside></p>
