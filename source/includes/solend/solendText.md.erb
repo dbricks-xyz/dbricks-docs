@@ -1,0 +1,16 @@
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+mintPubkey | X | PublicKey of token to deposit. See [FAQ](#how-to-find-token-mint-address) for instructions on how to find.
+quantity | X | Float or int passed as string.
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+For more information on using Solend, please see [their docs](https://docs.solend.fi/).
+<aside class="notice">
+All tokens listed on Solend are currently supported except for SOL. Any Solend transactions involving SOL done through dbricks will fail.
+</aside>

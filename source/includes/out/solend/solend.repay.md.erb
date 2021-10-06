@@ -1,0 +1,54 @@
+> Request
+
+```
+POST /solend/repay
+```
+
+```json
+{
+  "mintPubkey": "DyMMmhy1JoA8fiRNTy26TZ3mPv5sP6FGRUaQLm64i3UF",
+  "quantity": "10000",
+  "ownerPubkey": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA",
+}
+```
+
+```shell
+{
+  "mintPubkey": "string",
+  "quantity": "string",
+  "ownerPubkey": "string",
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA",
+            "isSigner": true,
+            "isWritable": true
+          }
+        ],
+        "programId": "11111111111111111111111111111111",
+        "data": "0000000080d5d50100000000c8100000000000000eadd8d7653445c1860e90193d60d103594c79ab34daa08dbdeca7b82d2de01a"
+      }
+    ],
+    "signers": [
+      {
+        "secretKey": [
+          91
+        ]
+      }
+    ]
+  }
+]
+```
+
+```shell
+null
+```
