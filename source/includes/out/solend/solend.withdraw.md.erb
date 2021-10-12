@@ -1,0 +1,50 @@
+> Request
+
+```
+POST /solend/withdraw
+```
+
+```json
+{
+  "mintPubkey": "DyMMmhy1JoA8fiRNTy26TZ3mPv5sP6FGRUaQLm64i3UF",
+  "quantity": "100",
+  "ownerPubkey": "B6jPGmDG8c2df1Hjzfq7LPDtbef5ULay8wssRfGCGrCH",
+}
+```
+
+```shell
+{
+  "mintPubkey": "string",
+  "quantity": "string",
+  "ownerPubkey": "string",
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "B6jPGmDG8c2df1Hjzfq7LPDtbef5ULay8wssRfGCGrCH",
+            "isSigner": true,
+            "isWritable": true
+          }
+        ],
+        "programId": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "data": ""
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+null
+```
