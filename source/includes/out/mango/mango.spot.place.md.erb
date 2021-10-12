@@ -1,0 +1,77 @@
+> Request
+
+```
+POST /mango/spot/place
+```
+
+```json
+{
+  "marketPubkey": "Es4NagTsFM5NQfwxw2T4dnM6z6yFDMmDhLu3ggbPux7k",
+  "side": "sell",
+  "price": "1",
+  "size": "1000",
+  "orderType": "limit",
+  "ownerPubkey": "F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh",
+  "mangoAccountNumber": "0"
+}
+```
+
+```shell
+{
+  "marketPubkey": "string",
+  "side": "string",
+  "price": "string",
+  "size": "string",
+  "orderType": "string",
+  "ownerPubkey": "string",
+  "mangoAccountNumber": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "reKsZQ7gwrurgjag6Y7gR7xtiCT2b6g6NGGSBdyvuea",
+            "isSigner": false,
+            "isWritable": false
+          }
+        ],
+        "programId": "EFUJ77cT4eFczspUS11K8BMbmmVxdQLk1pF8dhXk3Ri4",
+        "data": "09000000010000000100000000000000e803000000000000e80300000000000000000000000000000be3144e7c010000ffff"
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "string",
+            "isSigner": "boolean",
+            "isWritable": "boolean"
+          }
+        ],
+        "programId": "string",
+        "data": "string"
+      }
+    ],
+    "signers": [
+      "null"
+    ]
+  }
+]
+```

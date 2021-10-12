@@ -1,0 +1,148 @@
+# Mango
+
+## Deposit
+
+<%= partial "includes/out/mango/mango.deposit.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+mintPubkey | X | PublicKey of currency to be deposited into the Mango account. See [FAQ](#how-to-find-token-mint-address) for instructions on how to find.
+quantity | X | Float or int passed as string.
+ownerPubkey | X | PublicKey of wallet owner.
+mangoAccountNumber | X | Index of the Mango account that will be deposited into. Int passed as string. See [FAQ](#what-is-a-mango-account) for more details.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Withdraw
+
+<%= partial "includes/out/mango/mango.withdraw.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+mintPubkey | X | PublicKey of currency to be withdrawn from the Mango account. See [FAQ](#how-to-find-token-mint-address) for instructions on how to find.
+quantity | X | Float or int passed as string.
+isBorrow | X | Boolean indicating if the withdrawal is a borrow. 
+ownerPubkey | X | PublicKey of wallet owner.
+mangoAccountNumber | X | Index of the Mango account that will be withdrawn from. Int passed as string. See [FAQ](#what-is-a-mango-account) for more details.
+
+Note that in Mango borrowing requires that the user has deposited other assets as collateral. The maximum borrow amount depends on which [asset is being borrowed]. (https://docs.mango.markets/mango-v3/token-specs)
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Place spot order
+
+<%= partial "includes/out/mango/mango.spot.place.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Serum market to place an order on. See [FAQ](#how-to-find-serum-market-address) for instructions on how to find.
+side | X | One of: 'buy' / 'sell'.
+price | X | Float or int passed as string.
+size | X | Float or int passed as string.
+orderType | X | One of: 'limit' / 'ioc' / 'postOnly'.
+ownerPubkey | X | PublicKey of wallet owner.
+mangoAccountNumber | X | Index of the Mango account that will place the order. See [FAQ](#what-is-a-mango-account) for more details.
+
+Mango places spot trades on Serum.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Cancel spot order
+
+<%= partial "includes/out/mango/mango.spot.cancel.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Serum market to cancel an order on. See [FAQ](#how-to-find-serum-market-address) for instructions on how to find.
+orderId | √ | ID in hex format, eg 'affffffffffffffff'. Leave empty to cancel all outstanding orders for owner, in specified market.
+ownerPubkey | X | PublicKey of wallet owner.
+mangoAccountNumber | X | Index of the Mango account that placed the order to be cancelled. See [FAQ](#what-is-a-mango-account) for more details.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Settle spot market
+
+<%= partial "includes/out/mango/mango.spot.settle.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Serum market to settle. See [FAQ](#how-to-find-serum-market-address) for instructions on how to find.
+ownerPubkey | X | PublicKey of wallet owner.
+mangoAccountNumber | X | Index of the Mango account for which the market balances should be settled. See [FAQ](#what-is-a-mango-account) for more details.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Place perp order
+
+<%= partial "includes/out/mango/mango.perp.place.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Mango perp market to place an order on. Perp market PublicKeys can be found in the [open source Mango client] (https://github.com/blockworks-foundation/mango-client-v3/blob/e2d0d67b63f943b6dbf7cc40e6e06c6986f2aa1c/src/ids.json#L115).
+side | X | One of: 'buy' / 'sell'.
+price | X | Float or int passed as string.
+size | X | The amount of perp contracts. Float or int passed as string.
+orderType | X | One of: 'limit' / 'ioc' / 'postOnly'.
+ownerPubkey | X | PublicKey of wallet owner.
+mangoAccountNumber | X | Index of the Mango account that will place the order. See [FAQ](#what-is-a-mango-account) for more details.
+
+Asset specific perp information can be found in the [Mango documentation] (https://docs.mango.markets/mango-v3/perp-contract-specs).
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Cancel perp order
+
+<%= partial "includes/out/mango/mango.perp.cancel.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Mango perp market to cancel an order on. Perp market PublicKeys can be found in the [open source Mango client] (https://github.com/blockworks-foundation/mango-client-v3/blob/e2d0d67b63f943b6dbf7cc40e6e06c6986f2aa1c/src/ids.json#L115).
+orderId | √ | ID in hex format, eg 'affffffffffffffff'. Leave empty to cancel all outstanding orders for owner, in specified market.
+ownerPubkey | X | PublicKey of wallet owner.
+mangoAccountNumber | X | Index of the Mango account that placed the order to be cancelled. See [FAQ](#what-is-a-mango-account) for more details.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Settle perp PnL
+
+<%= partial "includes/out/mango/mango.perp.settle.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+marketPubkey | X | Address of Mango perp market to settle. Perp market PublicKeys can be found in the [open source Mango client] (https://github.com/blockworks-foundation/mango-client-v3/blob/e2d0d67b63f943b6dbf7cc40e6e06c6986f2aa1c/src/ids.json#L115).
+ownerPubkey | X | PublicKey of wallet owner.
+mangoAccountNumber | X | Index of the Mango account for which PnL should be settled. See [FAQ](#what-is-a-mango-account) for more details.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
