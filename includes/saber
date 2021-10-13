@@ -1,0 +1,674 @@
+<h1 id='saber'>Saber</h1><h2 id='swap'>Swap</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /saber/swap
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"swapPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YAkoNb6HKmSxQN9L8hiBE5tPJRsniSSMzND1boHmZxe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payingMintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"swapAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"swapPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"payingMintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"swapAmount"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YAkoNb6HKmSxQN9L8hiBE5tPJRsniSSMzND1boHmZxe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SSwpkEEcbUqx4vtoEByFjSkhKdCT862DNVb52nZg1UZ"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0140420f00000000000000000000000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>swapPubkey</td>
+<td>X</td>
+<td>Address of Saber swap account. See <a href="#how-to-find-saber-swap-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>payingMintPubkey</td>
+<td>X</td>
+<td>Mint address of the token to swap.</td>
+</tr>
+<tr>
+<td>swapAmount</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='pool-deposit'>Pool deposit</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /saber/pool/deposit
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"swapPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YAkoNb6HKmSxQN9L8hiBE5tPJRsniSSMzND1boHmZxe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tokenAmountA"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tokenAmountB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"swapPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"tokenAmountA"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"tokenAmountB"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YAkoNb6HKmSxQN9L8hiBE5tPJRsniSSMzND1boHmZxe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SSwpkEEcbUqx4vtoEByFjSkhKdCT862DNVb52nZg1UZ"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0240420f000000000000000000000000000000000000000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>swapPubkey</td>
+<td>X</td>
+<td>Address of Saber swap account. See <a href="#how-to-find-saber-swap-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>tokenAmountA</td>
+<td>X</td>
+<td>Amount of the first token in the swap pair to deposit. Float or int passed as string.</td>
+</tr>
+<tr>
+<td>tokenAmountB</td>
+<td>X</td>
+<td>Amount of the second token in the swap pair to deposit. Float or int passed as string.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='pool-withdraw'>Pool withdraw</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /saber/pool/withdraw
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"swapPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YAkoNb6HKmSxQN9L8hiBE5tPJRsniSSMzND1boHmZxe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poolTokenAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"withdrawMintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"swapPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"poolTokenAmount"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"withdrawMintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YAkoNb6HKmSxQN9L8hiBE5tPJRsniSSMzND1boHmZxe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SSwpkEEcbUqx4vtoEByFjSkhKdCT862DNVb52nZg1UZ"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0420a10700000000000000000000000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>swapPubkey</td>
+<td>X</td>
+<td>Address of Saber swap account. See <a href="#how-to-find-saber-swap-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>poolTokenAmount</td>
+<td>X</td>
+<td>Amount of the LP token to exchange.</td>
+</tr>
+<tr>
+<td>withdrawMintPubkey</td>
+<td>X</td>
+<td>Mint address of the token to withdraw. If the pool utilizes a Saber decimal-wrapped token, either the decimal-wrapped or Solana native mint address can be provided. The withdrawn token will always be the Solana native version.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='farm-deposit'>Farm deposit</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /saber/farm/deposit
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"poolMintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2poo1w1DL6yd2WNTCnNTzDqkC6MBXq7axo77P16yrBuf"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"poolMintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"amount"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887e5ba228830d7f20a1070000000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>poolMintPubkey</td>
+<td>X</td>
+<td>Mint address of Saber LP Token.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>X</td>
+<td>Amount of the LP token to stake.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='farm-withdraw'>Farm withdraw</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /saber/farm/withdraw
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"poolMintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2poo1w1DL6yd2WNTCnNTzDqkC6MBXq7axo77P16yrBuf"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"poolMintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"amount"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0204e13d13b66aaa20a1070000000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>poolMintPubkey</td>
+<td>X</td>
+<td>Mint address of Saber LP Token.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>X</td>
+<td>Amount of the LP token to unstake.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='farm-harvest'>Farm harvest</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /saber/farm/harvest
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"poolMintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2poo1w1DL6yd2WNTCnNTzDqkC6MBXq7axo77P16yrBuf"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"poolMintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVVDA3ZiAjTizemLGXNUN3gb6cffQFEYkFjFZokPmUPz"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0490844774179750"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>poolMintPubkey</td>
+<td>X</td>
+<td>Mint address of Saber LP Token.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>

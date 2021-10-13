@@ -1,0 +1,985 @@
+<h1 id='mango'>Mango</h1><h2 id='deposit'>Deposit</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /mango/deposit
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7tzjQ6SbTJywY1mPqXxHGJbHwnVU8sp1TAt8KFvhUTaB"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mangoAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"mintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"quantity"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"mangoAccountNumber"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11111111111111111111111111111111"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000080d5d50100000000c810000000000000c4dcec8075331618ce128efb4447b97eea87e0d8035f0a79eb294c27e1a6066d"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"secretKey"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">240</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"secretKey"</span>: <span class="o">[</span>
+          <span class="s2">"number"</span>
+        <span class="o">]</span>
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mintPubkey</td>
+<td>X</td>
+<td>PublicKey of currency to be deposited into the Mango account. See <a href="#how-to-find-token-mint-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+<tr>
+<td>mangoAccountNumber</td>
+<td>X</td>
+<td>Index of the Mango account that will be deposited into. Int passed as string. See <a href="#what-is-a-mango-account">FAQ</a> for more details.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='withdraw'>Withdraw</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /mango/withdraw
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7tzjQ6SbTJywY1mPqXxHGJbHwnVU8sp1TAt8KFvhUTaB"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isBorrow"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mangoAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"mintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"quantity"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"isBorrow"</span>: <span class="s2">"boolean"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"mangoAccountNumber"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mintPubkey</td>
+<td>X</td>
+<td>PublicKey of currency to be withdrawn from the Mango account. See <a href="#how-to-find-token-mint-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>isBorrow</td>
+<td>X</td>
+<td>Boolean indicating if the withdrawal is a borrow.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+<tr>
+<td>mangoAccountNumber</td>
+<td>X</td>
+<td>Index of the Mango account that will be withdrawn from. Int passed as string. See <a href="#what-is-a-mango-account">FAQ</a> for more details.</td>
+</tr>
+</tbody></table>
+
+<p>Note that in Mango borrowing requires that the user has deposited other assets as collateral. The maximum borrow amount depends on which [asset is being borrowed]. (https://docs.mango.markets/mango-v3/token-specs)</p>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='place-spot-order'>Place spot order</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /mango/spot/place
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"marketPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Es4NagTsFM5NQfwxw2T4dnM6z6yFDMmDhLu3ggbPux7k"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mangoAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"marketPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"side"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"price"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"size"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"orderType"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"mangoAccountNumber"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reKsZQ7gwrurgjag6Y7gR7xtiCT2b6g6NGGSBdyvuea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFUJ77cT4eFczspUS11K8BMbmmVxdQLk1pF8dhXk3Ri4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09000000010000000100000000000000e803000000000000e80300000000000000000000000000000be3144e7c010000ffff"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketPubkey</td>
+<td>X</td>
+<td>Address of Serum market to place an order on. See <a href="#how-to-find-serum-market-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>X</td>
+<td>One of: &#39;buy&#39; / &#39;sell&#39;.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>size</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>X</td>
+<td>One of: &#39;limit&#39; / &#39;ioc&#39; / &#39;postOnly&#39;.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+<tr>
+<td>mangoAccountNumber</td>
+<td>X</td>
+<td>Index of the Mango account that will place the order. See <a href="#what-is-a-mango-account">FAQ</a> for more details.</td>
+</tr>
+</tbody></table>
+
+<p>Mango places spot trades on Serum.</p>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-spot-order'>Cancel spot order</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /mango/spot/cancel
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"marketPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Es4NagTsFM5NQfwxw2T4dnM6z6yFDMmDhLu3ggbPux7k"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mangoAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"marketPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"orderId"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"mangoAccountNumber"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reKsZQ7gwrurgjag6Y7gR7xtiCT2b6g6NGGSBdyvuea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFUJ77cT4eFczspUS11K8BMbmmVxdQLk1pF8dhXk3Ri4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1400000000000000fcffffffffffffff0100000000000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketPubkey</td>
+<td>X</td>
+<td>Address of Serum market to cancel an order on. See <a href="#how-to-find-serum-market-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>√</td>
+<td>ID in hex format, eg &#39;affffffffffffffff&#39;. Leave empty to cancel all outstanding orders for owner, in specified market.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+<tr>
+<td>mangoAccountNumber</td>
+<td>X</td>
+<td>Index of the Mango account that placed the order to be cancelled. See <a href="#what-is-a-mango-account">FAQ</a> for more details.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='settle-spot-market'>Settle spot market</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /mango/spot/settle
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"marketPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Es4NagTsFM5NQfwxw2T4dnM6z6yFDMmDhLu3ggbPux7k"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mangoAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"marketPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"mangoAccountNumber"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reKsZQ7gwrurgjag6Y7gR7xtiCT2b6g6NGGSBdyvuea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFUJ77cT4eFczspUS11K8BMbmmVxdQLk1pF8dhXk3Ri4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketPubkey</td>
+<td>X</td>
+<td>Address of Serum market to settle. See <a href="#how-to-find-serum-market-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+<tr>
+<td>mangoAccountNumber</td>
+<td>X</td>
+<td>Index of the Mango account for which the market balances should be settled. See <a href="#what-is-a-mango-account">FAQ</a> for more details.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='place-perp-order'>Place perp order</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /mango/perp/place
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"marketPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DDpJRFMGUhNVuHRN9QiDXoiLgz7c5VaePaDCouFPRA6S"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mangoAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"marketPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"side"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"price"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"size"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"orderType"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"mangoAccountNumber"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reKsZQ7gwrurgjag6Y7gR7xtiCT2b6g6NGGSBdyvuea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFUJ77cT4eFczspUS11K8BMbmmVxdQLk1pF8dhXk3Ri4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c0000000100000000000000f40100000000000000000000000000000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketPubkey</td>
+<td>X</td>
+<td>Address of Mango perp market to place an order on. Perp market PublicKeys can be found in the <a href="https://github.com/blockworks-foundation/mango-client-v3/blob/e2d0d67b63f943b6dbf7cc40e6e06c6986f2aa1c/src/ids.json#L115">open source Mango client</a>.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>X</td>
+<td>One of: &#39;buy&#39; / &#39;sell&#39;.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>size</td>
+<td>X</td>
+<td>The amount of perp contracts. Float or int passed as string.</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>X</td>
+<td>One of: &#39;limit&#39; / &#39;ioc&#39; / &#39;postOnly&#39;.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+<tr>
+<td>mangoAccountNumber</td>
+<td>X</td>
+<td>Index of the Mango account that will place the order. See <a href="#what-is-a-mango-account">FAQ</a> for more details.</td>
+</tr>
+</tbody></table>
+
+<p>Asset specific perp information can be found in the <a href="https://docs.mango.markets/mango-v3/perp-contract-specs">Mango documentation</a>.</p>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-perp-order'>Cancel perp order</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /mango/perp/cancel
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"marketPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DDpJRFMGUhNVuHRN9QiDXoiLgz7c5VaePaDCouFPRA6S"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mangoAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"marketPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"orderId"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"mangoAccountNumber"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reKsZQ7gwrurgjag6Y7gR7xtiCT2b6g6NGGSBdyvuea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFUJ77cT4eFczspUS11K8BMbmmVxdQLk1pF8dhXk3Ri4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2700000032"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketPubkey</td>
+<td>X</td>
+<td>Address of Mango perp market to cancel an order on. Perp market PublicKeys can be found in the <a href="https://github.com/blockworks-foundation/mango-client-v3/blob/e2d0d67b63f943b6dbf7cc40e6e06c6986f2aa1c/src/ids.json#L115">open source Mango client</a>.</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>√</td>
+<td>ID in hex format, eg &#39;affffffffffffffff&#39;. Leave empty to cancel all outstanding orders for owner, in specified market.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+<tr>
+<td>mangoAccountNumber</td>
+<td>X</td>
+<td>Index of the Mango account that placed the order to be cancelled. See <a href="#what-is-a-mango-account">FAQ</a> for more details.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+<h2 id='settle-perp-pnl'>Settle perp PnL</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /mango/perp/settle
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"marketPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DDpJRFMGUhNVuHRN9QiDXoiLgz7c5VaePaDCouFPRA6S"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mangoAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"marketPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"mangoAccountNumber"</span>: <span class="s2">"string"</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reKsZQ7gwrurgjag6Y7gR7xtiCT2b6g6NGGSBdyvuea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFUJ77cT4eFczspUS11K8BMbmmVxdQLk1pF8dhXk3Ri4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"160000000100000000000000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"instructions"</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">"keys"</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">"pubkey"</span>: <span class="s2">"string"</span>,
+            <span class="s2">"isSigner"</span>: <span class="s2">"boolean"</span>,
+            <span class="s2">"isWritable"</span>: <span class="s2">"boolean"</span>
+          <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"programId"</span>: <span class="s2">"string"</span>,
+        <span class="s2">"data"</span>: <span class="s2">"string"</span>
+      <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">"signers"</span>: <span class="o">[</span>
+      <span class="s2">"null"</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketPubkey</td>
+<td>X</td>
+<td>Address of Mango perp market to settle. Perp market PublicKeys can be found in the <a href="https://github.com/blockworks-foundation/mango-client-v3/blob/e2d0d67b63f943b6dbf7cc40e6e06c6986f2aa1c/src/ids.json#L115">open source Mango client</a>.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+<tr>
+<td>mangoAccountNumber</td>
+<td>X</td>
+<td>Index of the Mango account for which PnL should be settled. See <a href="#what-is-a-mango-account">FAQ</a> for more details.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
