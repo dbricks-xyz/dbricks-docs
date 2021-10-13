@@ -1,9 +1,5 @@
 # Address
-temp:
-https://dbricks-xyz.github.io/dbricks-docs/#introduction
-
-eventually:
-https://docs.dbricks.xyz
+https://dbricks.dev
 
 # How to edit locally
 
