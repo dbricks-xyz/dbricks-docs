@@ -1,0 +1,67 @@
+> Request
+
+```
+POST /saber/farm/harvest
+```
+
+```json
+{
+  "poolMintPubkey": "2poo1w1DL6yd2WNTCnNTzDqkC6MBXq7axo77P16yrBuf",
+  "ownerPubkey": "GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"
+}
+```
+
+```shell
+{
+  "poolMintPubkey": "string",
+  "ownerPubkey": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "EVVDA3ZiAjTizemLGXNUN3gb6cffQFEYkFjFZokPmUPz",
+            "isSigner": false,
+            "isWritable": true
+          }
+        ],
+        "programId": "QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB",
+        "data": "0490844774179750"
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "string",
+            "isSigner": "boolean",
+            "isWritable": "boolean"
+          }
+        ],
+        "programId": "string",
+        "data": "string"
+      }
+    ],
+    "signers": [
+      "null"
+    ]
+  }
+]
+```

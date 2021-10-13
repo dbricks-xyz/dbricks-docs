@@ -1,0 +1,100 @@
+# Saber
+
+## Swap
+
+<%= partial "includes/out/saber/saber.swap.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+swapPubkey | X | Address of Saber swap account. See [FAQ](#how-to-find-saber-swap-address) for instructions on how to find.
+payingMintPubkey | X | Mint address of the token to swap.
+swapAmount | X | Float or int passed as string.
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Pool deposit
+
+<%= partial "includes/out/saber/saber.pool.deposit.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+swapPubkey | X | Address of Saber swap account. See [FAQ](#how-to-find-saber-swap-address) for instructions on how to find.
+tokenAmountA | X | Amount of the first token in the swap pair to deposit. Float or int passed as string.
+tokenAmountB | X | Amount of the second token in the swap pair to deposit. Float or int passed as string.
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Pool withdraw
+
+<%= partial "includes/out/saber/saber.pool.withdraw.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+swapPubkey | X | Address of Saber swap account. See [FAQ](#how-to-find-saber-swap-address) for instructions on how to find.
+poolTokenAmount | X | Amount of the LP token to exchange.
+withdrawMintPubkey | X | Mint address of the token to withdraw. If the pool utilizes a Saber decimal-wrapped token, either the decimal-wrapped or Solana native mint address can be provided. The withdrawn token will always be the Solana native version.
+ownerPubkey | X | PublicKey of wallet owner.
+
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Farm deposit
+
+<%= partial "includes/out/saber/saber.farm.deposit.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+poolMintPubkey | X | Mint address of Saber LP Token.
+amount | X | Amount of the LP token to stake.
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Farm withdraw
+
+<%= partial "includes/out/saber/saber.farm.withdraw.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+poolMintPubkey | X | Mint address of Saber LP Token.
+amount | X | Amount of the LP token to unstake.
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
+
+## Farm harvest
+
+<%= partial "includes/out/saber/saber.farm.harvest.md.erb" %>
+
+Payload commentary
+
+Name | Optional | Commentary
+---- | -------- | ----------
+poolMintPubkey | X | Mint address of Saber LP Token.
+ownerPubkey | X | PublicKey of wallet owner.
+
+Response commentary
+
+<%= partial "includes/general/instructionsAndSigners.md.erb" %>
