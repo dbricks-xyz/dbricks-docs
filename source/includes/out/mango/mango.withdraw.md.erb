@@ -1,0 +1,73 @@
+> Request
+
+```
+POST /mango/withdraw
+```
+
+```json
+{
+  "mintPubkey": "7tzjQ6SbTJywY1mPqXxHGJbHwnVU8sp1TAt8KFvhUTaB",
+  "quantity": "100",
+  "isBorrow": true,
+  "ownerPubkey": "F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh",
+  "mangoAccountNumber": "0"
+}
+```
+
+```shell
+{
+  "mintPubkey": "string",
+  "quantity": "string",
+  "isBorrow": "boolean",
+  "ownerPubkey": "string",
+  "mangoAccountNumber": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh",
+            "isSigner": true,
+            "isWritable": true
+          }
+        ],
+        "programId": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "data": ""
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "string",
+            "isSigner": "boolean",
+            "isWritable": "boolean"
+          }
+        ],
+        "programId": "string",
+        "data": "string"
+      }
+    ],
+    "signers": [
+      "null"
+    ]
+  }
+]
+```

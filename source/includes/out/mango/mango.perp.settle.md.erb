@@ -1,0 +1,69 @@
+> Request
+
+```
+POST /mango/perp/settle
+```
+
+```json
+{
+  "marketPubkey": "DDpJRFMGUhNVuHRN9QiDXoiLgz7c5VaePaDCouFPRA6S",
+  "ownerPubkey": "F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh",
+  "mangoAccountNumber": "0"
+}
+```
+
+```shell
+{
+  "marketPubkey": "string",
+  "ownerPubkey": "string",
+  "mangoAccountNumber": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "reKsZQ7gwrurgjag6Y7gR7xtiCT2b6g6NGGSBdyvuea",
+            "isSigner": false,
+            "isWritable": false
+          }
+        ],
+        "programId": "EFUJ77cT4eFczspUS11K8BMbmmVxdQLk1pF8dhXk3Ri4",
+        "data": "160000000100000000000000"
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "string",
+            "isSigner": "boolean",
+            "isWritable": "boolean"
+          }
+        ],
+        "programId": "string",
+        "data": "string"
+      }
+    ],
+    "signers": [
+      "null"
+    ]
+  }
+]
+```

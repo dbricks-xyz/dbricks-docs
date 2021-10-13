@@ -1,0 +1,71 @@
+> Request
+
+```
+POST /saber/pool/withdraw
+```
+
+```json
+{
+  "swapPubkey": "YAkoNb6HKmSxQN9L8hiBE5tPJRsniSSMzND1boHmZxe",
+  "poolTokenAmount": "0.5",
+  "withdrawMintPubkey": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+  "ownerPubkey": "GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"
+}
+```
+
+```shell
+{
+  "swapPubkey": "string",
+  "poolTokenAmount": "string",
+  "withdrawMintPubkey": "string",
+  "ownerPubkey": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "YAkoNb6HKmSxQN9L8hiBE5tPJRsniSSMzND1boHmZxe",
+            "isSigner": false,
+            "isWritable": false
+          }
+        ],
+        "programId": "SSwpkEEcbUqx4vtoEByFjSkhKdCT862DNVb52nZg1UZ",
+        "data": "0420a10700000000000000000000000000"
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "string",
+            "isSigner": "boolean",
+            "isWritable": "boolean"
+          }
+        ],
+        "programId": "string",
+        "data": "string"
+      }
+    ],
+    "signers": [
+      "null"
+    ]
+  }
+]
+```

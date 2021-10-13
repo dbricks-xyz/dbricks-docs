@@ -1,0 +1,79 @@
+> Request
+
+```
+POST /mango/deposit
+```
+
+```json
+{
+  "mintPubkey": "7tzjQ6SbTJywY1mPqXxHGJbHwnVU8sp1TAt8KFvhUTaB",
+  "quantity": "10000",
+  "ownerPubkey": "F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh",
+  "mangoAccountNumber": "0"
+}
+```
+
+```shell
+{
+  "mintPubkey": "string",
+  "quantity": "string",
+  "ownerPubkey": "string",
+  "mangoAccountNumber": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "F6zoy1GDqYVcTphqnLhKRVtmzFnf4TwTPEBB1jezonrh",
+            "isSigner": true,
+            "isWritable": true
+          }
+        ],
+        "programId": "11111111111111111111111111111111",
+        "data": "0000000080d5d50100000000c810000000000000c4dcec8075331618ce128efb4447b97eea87e0d8035f0a79eb294c27e1a6066d"
+      }
+    ],
+    "signers": [
+      {
+        "secretKey": [
+          240
+        ]
+      }
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "string",
+            "isSigner": "boolean",
+            "isWritable": "boolean"
+          }
+        ],
+        "programId": "string",
+        "data": "string"
+      }
+    ],
+    "signers": [
+      {
+        "secretKey": [
+          "number"
+        ]
+      }
+    ]
+  }
+]
+```

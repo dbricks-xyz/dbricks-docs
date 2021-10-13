@@ -1,0 +1,69 @@
+> Request
+
+```
+POST /saber/farm/deposit
+```
+
+```json
+{
+  "poolMintPubkey": "2poo1w1DL6yd2WNTCnNTzDqkC6MBXq7axo77P16yrBuf",
+  "amount": "0.5",
+  "ownerPubkey": "GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr"
+}
+```
+
+```shell
+{
+  "poolMintPubkey": "string",
+  "amount": "string",
+  "ownerPubkey": "string"
+}
+```
+
+> Response
+
+```json
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "GQ1Udp1QQhts8VtDcBMdq6Zc94x54hWXuMDkrvpbZATr",
+            "isSigner": true,
+            "isWritable": false
+          }
+        ],
+        "programId": "QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB",
+        "data": "887e5ba228830d7f20a1070000000000"
+      }
+    ],
+    "signers": [
+      null
+    ]
+  }
+]
+```
+
+```shell
+[
+  {
+    "instructions": [
+      {
+        "keys": [
+          {
+            "pubkey": "string",
+            "isSigner": "boolean",
+            "isWritable": "boolean"
+          }
+        ],
+        "programId": "string",
+        "data": "string"
+      }
+    ],
+    "signers": [
+      "null"
+    ]
+  }
+]
+```
