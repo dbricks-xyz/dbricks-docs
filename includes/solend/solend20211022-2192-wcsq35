@@ -1,0 +1,396 @@
+<h1 id='solend'>Solend</h1><h2 id='deposit-to-solend'>Deposit to Solend</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /solend/deposit
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DyMMmhy1JoA8fiRNTy26TZ3mPv5sP6FGRUaQLm64i3UF"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"mintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"quantity"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11111111111111111111111111111111"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000080d5d50100000000c8100000000000000eadd8d7653445c1860e90193d60d103594c79ab34daa08dbdeca7b82d2de01a"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"secretKey"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">91</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>null
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mintPubkey</td>
+<td>X</td>
+<td>PublicKey of token to deposit. See <a href="#how-to-find-token-mint-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+
+<p>For more information on using Solend, please see <a href="https://docs.solend.fi/">their docs</a>.
+<aside class="notice">
+All tokens listed on Solend are currently supported except for SOL. Any Solend transactions involving SOL done through dbricks will fail.
+</aside></p>
+<h2 id='withdraw-from-solend'>Withdraw from Solend</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /solend/withdraw
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DyMMmhy1JoA8fiRNTy26TZ3mPv5sP6FGRUaQLm64i3UF"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B6jPGmDG8c2df1Hjzfq7LPDtbef5ULay8wssRfGCGrCH"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"mintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"quantity"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B6jPGmDG8c2df1Hjzfq7LPDtbef5ULay8wssRfGCGrCH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>null
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mintPubkey</td>
+<td>X</td>
+<td>PublicKey of token to deposit. See <a href="#how-to-find-token-mint-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+
+<p>For more information on using Solend, please see <a href="https://docs.solend.fi/">their docs</a>.
+<aside class="notice">
+All tokens listed on Solend are currently supported except for SOL. Any Solend transactions involving SOL done through dbricks will fail.
+</aside></p>
+<h2 id='borrow'>Borrow</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /solend/borrow
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DyMMmhy1JoA8fiRNTy26TZ3mPv5sP6FGRUaQLm64i3UF"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"mintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"quantity"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11111111111111111111111111111111"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000080d5d50100000000c8100000000000000eadd8d7653445c1860e90193d60d103594c79ab34daa08dbdeca7b82d2de01a"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"secretKey"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">91</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>null
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mintPubkey</td>
+<td>X</td>
+<td>PublicKey of token to deposit. See <a href="#how-to-find-token-mint-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+
+<p>For more information on using Solend, please see <a href="https://docs.solend.fi/">their docs</a>.
+<aside class="notice">
+All tokens listed on Solend are currently supported except for SOL. Any Solend transactions involving SOL done through dbricks will fail.
+</aside></p>
+<h2 id='repay'>Repay</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight plaintext"><code>POST /solend/repay
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mintPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DyMMmhy1JoA8fiRNTy26TZ3mPv5sP6FGRUaQLm64i3UF"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerPubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"mintPubkey"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"quantity"</span>: <span class="s2">"string"</span>,
+  <span class="s2">"ownerPubkey"</span>: <span class="s2">"string"</span>,
+<span class="o">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75ErM1QcGjHiPMX7oLsf9meQdGSUs4ZrwS2X8tBpsZhA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isSigner"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isWritable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"programId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11111111111111111111111111111111"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000080d5d50100000000c8100000000000000eadd8d7653445c1860e90193d60d103594c79ab34daa08dbdeca7b82d2de01a"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"secretKey"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">91</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>null
+</code></pre></div>
+
+<p>Payload commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mintPubkey</td>
+<td>X</td>
+<td>PublicKey of token to deposit. See <a href="#how-to-find-token-mint-address">FAQ</a> for instructions on how to find.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>X</td>
+<td>Float or int passed as string.</td>
+</tr>
+<tr>
+<td>ownerPubkey</td>
+<td>X</td>
+<td>PublicKey of wallet owner.</td>
+</tr>
+</tbody></table>
+
+<p>Response commentary</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Nullable</th>
+<th>Commentary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instructions</td>
+<td>X</td>
+<td>Array of <a href="https://docs.solana.com/developing/programming-model/transactions#instructions">Solana Instruction objects</a> to be passed into a Transaction.</td>
+</tr>
+<tr>
+<td>signers</td>
+<td>√</td>
+<td>Array of <em>additional</em> <a href="https://docs.solana.com/developing/programming-model/accounts#signers">Signers</a>, to be joined with owner&#39;s Keypair and sent together with the Transaction.</td>
+</tr>
+</tbody></table>
+
+<p>For more information on using Solend, please see <a href="https://docs.solend.fi/">their docs</a>.
+<aside class="notice">
+All tokens listed on Solend are currently supported except for SOL. Any Solend transactions involving SOL done through dbricks will fail.
+</aside></p>
