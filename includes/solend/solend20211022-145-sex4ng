@@ -1,4 +1,4 @@
-<h1 id='solend'>Solend</h1><h2 id='deposit'>Deposit</h2>
+<h1 id='solend'>Solend</h1><h2 id='deposit-to-solend'>Deposit to Solend</h2>
 <blockquote>
 <p>Request</p>
 </blockquote>
@@ -98,7 +98,7 @@
 <aside class="notice">
 All tokens listed on Solend are currently supported except for SOL. Any Solend transactions involving SOL done through dbricks will fail.
 </aside></p>
-<h2 id='withdraw'>Withdraw</h2>
+<h2 id='withdraw-from-solend'>Withdraw from Solend</h2>
 <blockquote>
 <p>Request</p>
 </blockquote>
